@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Login Form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script>
+        function login() {
+            let username = document.getElementById("us").value;
+            let password = document.getElementById("pw").value;
+            
+            if (username === "salsa" && password === "123") {
+                document.getElementById("message").innerHTML = 
+                "<div class ='alert alert-success'>Selamat! Anda Berhasil Login</div>";
+            }else {
+                document.getElementById("message").innerHTML =
+                "<div class ='alert alert-danger'>Kesalahan! Username atau Password anda mungkin salah</div>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="card col-lg-3 col-md-6 m-2">
+        <!-- card header -->
+        <div class="card-header bg-primary">
+            <h3 class="text-white">Login Form</h3>
+        </div>
+ 
+        <!-- card body -->
+        <div class="card-body">
+            Username
+            <input type="text" class="form-control mb-2" id="us" />
+ 
+            Password
+            <input type="password" class="form-control mb-2" id="pw">
+ 
+            <button class="btn btn-primary btn-block" onclick="login()">
+                LOGIN
+            </button>
+        </div>
+ 
+        <!-- card footer -->
+        <div class="card-footer" id="message">
+            <!-- letak alert -->
+        </div>
+    </div>
+</body>
+</html>

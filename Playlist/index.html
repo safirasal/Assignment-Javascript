@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script>
+        function playButton(currentList){
+            //currentList digunakan utk menyimpan 
+            //audio yg saat ini diputar
+            let musics = document.getElementsByTagName("audio");
+            for(let index = 0; index < musics.length; index++){
+                if(musics[index] !== currentList){
+                    musics[index].pause();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <!--card header-->
+            <div class="card-header bg-info">
+                <h3 class="text-white text-center">My Playlist</h3>
+            </div>
+            
+            <!--card body-->
+            <div class="card-body">
+                <ul class="list-group">
+                    <!--list pertama-->
+                    <li class="list-group-item">
+                        <div class="row">
+                            <!--div utk gambar-->
+                            <div class="col-lg-4 col-md-6">
+                                <img src="image/playlist1.png" 
+                                width="200" height="200"/>
+                            </div>
+                            <!--div utk judul dan kontrol lagu-->
+                            <div class="col-lg-8 col-md-10">
+                                <h5 class="text-primary">
+                                    Promise
+                                </h5>
+                                <audio src="song/promise-jimin.mp3" 
+                                controls onplay="playButton(this)">
+                                </audio>
+                            </div>
+                        </div>
+                    </li>
+                    <!--list kedua-->
+                    <li class="list-group-item">
+                        <div class="row">
+                            <!--div utk gambar-->
+                            <div class="col-lg-4 col-md-6">
+                                <img src="image/playlist2.jfif" 
+                                width="200" height="200"/>
+                            </div>
+                            <!--div utk judul dan kontrol lagu-->
+                            <div class="col-lg-8 col-md-10">
+                                <h5 class="text-danger">
+                                    Sweet Night
+                                </h5>
+                                <audio src="song/sweet night-v.mp3" 
+                                controls onplay="playButton(this)">
+                                </audio>
+                            </div>
+                        </div>
+                    </li>
+                    <!--list ketiga-->
+                    <li class="list-group-item">
+                        <div class="row">
+                            <!--div utk gambar-->
+                            <div class="col-lg-4 col-md-6">
+                                <img src="image/playlist3.jfif" 
+                                width="200" height="200"/>
+                            </div>
+                            <!--div utk judul dan kontrol lagu-->
+                            <div class="col-lg-8 col-md-10">
+                                <h5 class="text-dark">
+                                    Still With You
+                                </h5>
+                                <audio src="song/still with you-jk.mp3" 
+                                controls onplay="playButton(this)">
+                                </audio>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
